@@ -11,6 +11,7 @@ class AutomataAPIServer:
     def __init__(self, options):
         self.log = logging.getLogger(__name__)
         self.options = options
+        self.host = options['API_SERVER_HOST']
         self.port = options['API_SERVER_PORT']
         self.init_dependencies()
 
@@ -22,4 +23,4 @@ class AutomataAPIServer:
 
     def run(self):
         self.log.info('Running')
-        uvicorn.run('apiautomata.API:app', port=self.port, access_log=False)
+        uvicorn.run('apiautomata.API:app', host=self.host, port=self.port, access_log=False)
