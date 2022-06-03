@@ -1,6 +1,6 @@
 import logging
 
-from apiautomata.AutomataAPIServer import AutomataAPIServer
+from apiautomata.server.AutomataAPIServer import AutomataAPIServer
 
 if __name__ == '__main__':
 
@@ -14,5 +14,3 @@ if __name__ == '__main__':
 
     server = AutomataAPIServer(options)
     server.run()
-
-    print('Automata API Server running...')

@@ -2,7 +2,7 @@ from core.arguments.command_line_arguments import option_arg_parser
 from logger.ConfigureLogger import ConfigureLogger
 from metainfo.MetaInfo import MetaInfo
 
-from apiautomata.AutomataAPIServer import AutomataAPIServer
+from apiautomata.server.AutomataAPIServer import AutomataAPIServer
 
 
 def start():

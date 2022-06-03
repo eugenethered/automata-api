@@ -1,9 +1,10 @@
 from coreutility.date_utility import get_utc_timestamp
-from fastapi import FastAPI
 
-app = FastAPI()
+from fastapi import APIRouter
+
+router = APIRouter()
 
 
-@app.get('/echo')
+@router.get('/echo')
 async def echo():
     return {'echo': get_utc_timestamp()}

@@ -7,4 +7,4 @@ class AutomataAPIServer:
         self.port = options['API_SERVER_PORT']
 
     def run(self):
-        uvicorn.run('apiautomata.echo.echo:app', port=self.port, reload=True, access_log=False)
+        uvicorn.run('apiautomata.API:app', port=self.port, reload=True, access_log=False)
