@@ -1,7 +1,7 @@
 import uvicorn
 from missingrepo.repository.MissingRepository import MissingRepository
 
-from apiautomata.holder.PlainItemHolder import PlainItemHolder
+from apiautomata.holder.ItemHolder import ItemHolder
 
 
 class AutomataAPIServer:
@@ -12,9 +12,9 @@ class AutomataAPIServer:
         self.init_dependencies()
 
     def init_dependencies(self):
-        plain_item_holder = PlainItemHolder()
-        plain_item_holder.add('version', self.options['VERSION'])
-        plain_item_holder.add('missing_repository', MissingRepository(self.options))
+        item_holder = ItemHolder()
+        item_holder.add(self.options['VERSION'], 'version')
+        item_holder.add_entity(MissingRepository(self.options))
 
     def run(self):
         uvicorn.run('apiautomata.API:app', port=self.port, access_log=False)
