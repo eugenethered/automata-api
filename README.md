@@ -5,8 +5,9 @@
 
 ## Development
 
-### Seeing API
-http://127.0.0.1:8000/docs
+### View API end-points
+* http://127.0.0.1:8000/docs
+* http://127.0.0.1:8000/redoc
 
-### Starting Web Server
-* `uvicorn apiautomata.echo.echo:app --reload` (inside venv)
+### Start Web Server
+* `uvicorn apiautomata.API:app --reload` (inside venv)
