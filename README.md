@@ -1,2 +1,4 @@
-# automata-api
-Automata API
+# Automata API
+
+## Packaging
+`python3 -m build`
