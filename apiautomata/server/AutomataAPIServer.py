@@ -1,6 +1,7 @@
 import logging
 
 import uvicorn
+from exchangerepo.repository.ExchangeRateRepository import ExchangeRateRepository
 from exchangerepo.repository.InstrumentExchangeRepository import InstrumentExchangeRepository
 from exchangetransformrepo.repository.ExchangeTransformRepository import ExchangeTransformRepository
 from missingrepo.repository.MissingRepository import MissingRepository
@@ -24,6 +25,7 @@ class AutomataAPIServer:
         item_holder.add_entity(MissingRepository(self.options))
         item_holder.add_entity(InstrumentExchangeRepository(self.options))
         item_holder.add_entity(ExchangeTransformRepository(self.options))
+        item_holder.add_entity(ExchangeRateRepository(self.options))
 
     def run(self):
         self.log.info('Running')

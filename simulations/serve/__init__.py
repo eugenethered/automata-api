@@ -14,6 +14,8 @@ if __name__ == '__main__':
         'MISSING_KEY': '<MARKET>:missing',
         'INSTRUMENT_EXCHANGES_KEY': '<MARKET>:exchange:instruments',
         'EXCHANGE_TRANSFORMATIONS_KEY': '<MARKET>:transformation:exchange',
+        'EXCHANGE_RATE_TIMESERIES_KEY': '<MARKET>:time-series:exchange-rate:{}',
+        'EXCHANGE_RATE_TIMESERIES_RETENTION': 360000,
         'VERSION': '0.0.1'
     }
 
