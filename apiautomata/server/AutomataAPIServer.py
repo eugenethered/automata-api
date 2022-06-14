@@ -5,6 +5,7 @@ from exchangerepo.repository.ExchangeRateRepository import ExchangeRateRepositor
 from exchangerepo.repository.InstrumentExchangeRepository import InstrumentExchangeRepository
 from exchangetransformrepo.repository.ExchangeTransformRepository import ExchangeTransformRepository
 from missingrepo.repository.MissingRepository import MissingRepository
+from processrepo.repository.ProcessRunProfileRepository import ProcessRunProfileRepository
 
 from apiautomata.holder.ItemHolder import ItemHolder
 
@@ -26,6 +27,7 @@ class AutomataAPIServer:
         item_holder.add_entity(InstrumentExchangeRepository(self.options))
         item_holder.add_entity(ExchangeTransformRepository(self.options))
         item_holder.add_entity(ExchangeRateRepository(self.options))
+        item_holder.add_entity(ProcessRunProfileRepository(self.options))
 
     def run(self):
         self.log.info('Running')

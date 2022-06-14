@@ -16,6 +16,7 @@ if __name__ == '__main__':
         'EXCHANGE_TRANSFORMATIONS_KEY': '<MARKET>:transformation:exchange',
         'EXCHANGE_RATE_TIMESERIES_KEY': '<MARKET>:time-series:exchange-rate:{}',
         'EXCHANGE_RATE_TIMESERIES_RETENTION': 360000,
+        'PROCESS_RUN_PROFILE_KEY': '{}:process:run-profile:{}',
         'VERSION': '0.0.1'
     }
 

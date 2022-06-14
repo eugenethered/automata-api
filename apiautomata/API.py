@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from apiautomata.routes import echo, home, missing, proxy
 from apiautomata.routes.exchange import instrument_exchange, exchange_rate
+from apiautomata.routes.process import process_enablement
 from apiautomata.routes.transform import exchange_transform
 
 app = FastAPI()
@@ -14,6 +15,7 @@ app.include_router(missing.router)
 app.include_router(instrument_exchange.router)
 app.include_router(exchange_transform.router)
 app.include_router(exchange_rate.router)
+app.include_router(process_enablement.router)
 
 origins = ['*']
 
