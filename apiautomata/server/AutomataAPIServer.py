@@ -7,6 +7,7 @@ from exchangetransformrepo.repository.ExchangeTransformRepository import Exchang
 from missingrepo.repository.MissingRepository import MissingRepository
 from processrepo.repository.ProcessRepository import ProcessRepository
 from processrepo.repository.ProcessRunProfileRepository import ProcessRunProfileRepository
+from tradetransformrepo.repository.TradeTransformRepository import TradeTransformRepository
 
 from apiautomata.holder.ItemHolder import ItemHolder
 
@@ -27,6 +28,7 @@ class AutomataAPIServer:
         item_holder.add_entity(MissingRepository(self.options))
         item_holder.add_entity(InstrumentExchangeRepository(self.options))
         item_holder.add_entity(ExchangeTransformRepository(self.options))
+        item_holder.add_entity(TradeTransformRepository(self.options))
         item_holder.add_entity(ExchangeRateRepository(self.options))
         item_holder.add_entity(ProcessRunProfileRepository(self.options))
         item_holder.add_entity(ProcessRepository(self.options))
