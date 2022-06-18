@@ -10,7 +10,7 @@ router = APIRouter()
 
 
 @router.get('/exchange/instrument', response_model=List[InstrumentExchange])
-async def exchange_instruments():
+async def get_all_exchange_instruments():
     instrument_exchange_repository = ItemHolder.get_entity(InstrumentExchangeRepository)
     holder = instrument_exchange_repository.retrieve()
     return holder.get_all()

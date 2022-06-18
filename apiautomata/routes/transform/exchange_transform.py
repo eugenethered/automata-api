@@ -10,12 +10,12 @@ router = APIRouter()
 
 
 @router.get('/transform/exchange', response_model=List[ExchangeTransform])
-async def exchange_transforms():
+async def get_all_exchange_transforms():
     exchange_transform_repository = ItemHolder.get_entity(ExchangeTransformRepository)
     return exchange_transform_repository.retrieve()
 
 
-@router.post('/transform/exchange')
+@router.put('/transform/exchange')
 async def create_exchange_transform(exchange_transform: ExchangeTransform):
     exchange_transform_repository = ItemHolder.get_entity(ExchangeTransformRepository)
     exchange_transform_repository.append(exchange_transform)

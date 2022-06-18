@@ -1,15 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from apiautomata.routes import echo, home, missing, proxy
+from apiautomata.routes import home, proxy
 from apiautomata.routes.exchange import instrument_exchange, exchange_rate
+from apiautomata.routes.missing import missing
 from apiautomata.routes.process import process_enablement, process_status
 from apiautomata.routes.transform import exchange_transform
 
 app = FastAPI()
 
 app.include_router(home.router)
-app.include_router(echo.router)
 app.include_router(proxy.router)
 app.include_router(missing.router)
 app.include_router(instrument_exchange.router)

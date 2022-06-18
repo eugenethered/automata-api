@@ -10,6 +10,13 @@ router = APIRouter()
 
 
 @router.get('/missing', response_model=List[Missing])
-async def missing():
+async def get_all_missing():
     missing_repository = ItemHolder.get_entity(MissingRepository)
     return missing_repository.retrieve()
+
+
+@router.delete('/missing')
+async def delete_missing(missing: Missing):
+    missing_repository = ItemHolder.get_entity(MissingRepository)
+    missing_repository.remove(missing)
+    return 'SUCCESS'

@@ -23,8 +23,8 @@ if __name__ == '__main__':
 
     logging.basicConfig(level=logging.DEBUG)
 
-    logger = logging.getLogger('ExchangeTransformRepository')
-    logger.setLevel(logging.DEBUG)
+    logging.getLogger('ExchangeTransformRepository').setLevel(logging.DEBUG)
+    logging.getLogger('MissingRepository').setLevel(logging.DEBUG)
 
     RedisCacheHolder(options)
 

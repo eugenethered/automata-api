@@ -10,7 +10,7 @@ router = APIRouter()
 
 
 @router.get('/exchange/rate/{instrument_from}/{instrument_to}', response_model=Dict)
-async def exchange_rate(instrument_from, instrument_to):
+async def get_exchange_rate(instrument_from, instrument_to):
     instrument_exchange = InstrumentExchange(instrument_from, instrument_to)
     exchange_rate_repository = ItemHolder.get_entity(ExchangeRateRepository)
     instant_rate = exchange_rate_repository.retrieve_latest(instrument_exchange)
