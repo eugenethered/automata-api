@@ -14,7 +14,7 @@ from apiautomata.holder.ItemHolder import ItemHolder
 class AutomataAPIServer:
 
     def __init__(self, options):
-        self.log = logging.getLogger(__name__)
+        self.log = logging.getLogger('AutomataAPIServer')
         self.options = options
         self.host = options['API_SERVER_HOST']
         self.port = options['API_SERVER_PORT']

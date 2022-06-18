@@ -23,6 +23,9 @@ if __name__ == '__main__':
 
     logging.basicConfig(level=logging.DEBUG)
 
+    logger = logging.getLogger('ExchangeTransformRepository')
+    logger.setLevel(logging.DEBUG)
+
     RedisCacheHolder(options)
 
     server = AutomataAPIServer(options)

@@ -18,5 +18,5 @@ async def exchange_transforms():
 @router.post('/transform/exchange')
 async def create_exchange_transform(exchange_transform: ExchangeTransform):
     exchange_transform_repository = ItemHolder.get_entity(ExchangeTransformRepository)
-    exchange_transform_repository.store(exchange_transform)
+    exchange_transform_repository.append(exchange_transform)
     return exchange_transform
