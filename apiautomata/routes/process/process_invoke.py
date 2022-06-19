@@ -6,7 +6,7 @@ from apiautomata.process.ProcessInvoker import ProcessInvoker
 router = APIRouter()
 
 
-@router.get('/process/invoke', status_code=200)
+@router.post('/process/invoke', status_code=200)
 async def invoke_process(process_name: str, response: Response):
     process_run_command = ItemHolder.get('process-run-command')
     process_invoker = ProcessInvoker(process_run_command, process_name)
