@@ -19,6 +19,7 @@ if __name__ == '__main__':
         'EXCHANGE_RATE_TIMESERIES_RETENTION': 360000,
         'PROCESS_RUN_PROFILE_KEY': '{}:process:run-profile:{}',
         'PROCESS_KEY': '{}:process:status:{}',
+        'PROCESS_RUN_COMMAND': 'echo "running: {process-name}"',
         'VERSION': '0.0.1'
     }
 

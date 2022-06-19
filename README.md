@@ -13,3 +13,6 @@
 Instead of using `uvicorn` with `--reload` (as this does not wire-in dependencies as per this projects' conventions)
 
 Use [simulations/serve](simulations/serve/__init__.py)
+
+### Issues
+Beware of the Zombies `ps aux | grep defunct`

@@ -25,6 +25,7 @@ class AutomataAPIServer:
         self.log.info('Initializing dependencies')
         item_holder = ItemHolder()
         item_holder.add(self.options['VERSION'], 'version')
+        item_holder.add(self.options['PROCESS_RUN_COMMAND'], 'process-run-command')
         item_holder.add_entity(MissingRepository(self.options))
         item_holder.add_entity(InstrumentExchangeRepository(self.options))
         item_holder.add_entity(ExchangeTransformRepository(self.options))
