@@ -19,5 +19,5 @@ async def get_all_exchange_instruments():
 @router.post('/exchange/instrument')
 async def add_exchange_instrument(instrument_exchange: InstrumentExchange):
     instrument_exchange_repository = ItemHolder.get_entity(InstrumentExchangeRepository)
-    instrument_exchange_repository.append_store(instrument_exchange)
+    instrument_exchange_repository.update(instrument_exchange)
     return instrument_exchange

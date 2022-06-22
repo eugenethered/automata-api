@@ -18,5 +18,5 @@ async def get_all_missing():
 @router.delete('/missing')
 async def delete_missing(missing: Missing):
     missing_repository = ItemHolder.get_entity(MissingRepository)
-    missing_repository.remove(missing)
+    missing_repository.delete(missing)
     return 'SUCCESS'
