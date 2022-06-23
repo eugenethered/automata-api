@@ -1,6 +1,7 @@
 import logging
 
 from cache.holder.RedisCacheHolder import RedisCacheHolder
+from cache.provider.RedisCacheProviderWithTimeSeries import RedisCacheProviderWithTimeSeries
 from core.arguments.command_line_arguments import option_arg_parser
 from logger.ConfigureLogger import ConfigureLogger
 from metainfo.MetaInfo import MetaInfo
@@ -19,7 +20,7 @@ def start():
     log = logging.getLogger('Automata API')
     log.info(f'Automata API starting with OPTIONS {args.options}')
 
-    RedisCacheHolder(args.options)
+    RedisCacheHolder(args.options, held_type=RedisCacheProviderWithTimeSeries)
 
     server = AutomataAPIServer(args.options)
     server.run()
