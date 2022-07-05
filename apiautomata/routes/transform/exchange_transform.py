@@ -22,6 +22,13 @@ async def create_exchange_transform(exchange_transform: ExchangeTransform):
     return exchange_transform
 
 
+@router.post('/transform/exchange')
+async def update_exchange_transform(exchange_transform: ExchangeTransform):
+    exchange_transform_repository = ItemHolder.get_entity(ExchangeTransformRepository)
+    exchange_transform_repository.update(exchange_transform)
+    return exchange_transform
+
+
 @router.delete('/transform/exchange')
 async def delete_exchange_transform(exchange_transform: ExchangeTransform):
     exchange_transform_repository = ItemHolder.get_entity(ExchangeTransformRepository)

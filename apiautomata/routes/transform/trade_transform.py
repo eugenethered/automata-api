@@ -22,6 +22,13 @@ async def create_trade_transform(trade_transform: TradeTransform):
     return trade_transform
 
 
+@router.post('/transform/trade')
+async def update_trade_transform(trade_transform: TradeTransform):
+    trade_transform_repository = ItemHolder.get_entity(TradeTransformRepository)
+    trade_transform_repository.update(trade_transform)
+    return trade_transform
+
+
 @router.delete('/transform/trade')
 async def delete_trade_transform(trade_transform: TradeTransform):
     trade_transform_repository = ItemHolder.get_entity(TradeTransformRepository)
