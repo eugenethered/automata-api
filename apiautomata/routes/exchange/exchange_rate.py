@@ -15,5 +15,5 @@ async def get_exchange_rate(instrument_from, instrument_to):
     exchange_rate_repository = ItemHolder.get_entity(ExchangeRateRepository)
     instant_rate = exchange_rate_repository.retrieve_latest(instrument_exchange)
     if instant_rate is not None:
-        return {'rate': str(instant_rate.rate), 'instant': instant_rate.instant}
+        return {'rate': str(instant_rate.rate), 'instant': instant_rate.instant, 'inverse': str(instant_rate.rate.invert())}
     return {}
