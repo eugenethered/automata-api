@@ -1,14 +1,16 @@
-FROM python:3.10.6-alpine as build-stage
-ENV PYTHONUNBUFFERED 1
-WORKDIR /opt/venv
-RUN python3 -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-RUN pip3 install persuader-technology-automata-api
+FROM python:3.10.6-alpine
 
-FROM python:3.10.6-alpine as container-stage
-WORKDIR /opt/venv
-COPY --from=build-stage /opt/venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-CMD ["automata-api-start"]
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
+WORKDIR /app
 
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY ./apiautomata ./apiautomata
+
+# todo: non-root user
+
+ENV PYTHONPATH="${PYTHONPATH}:/app/apiautomata"
+CMD ["python", "-v"]

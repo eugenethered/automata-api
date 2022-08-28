@@ -1,18 +1,11 @@
 # Automata API
 
-## Packaging
-`python3 -m build`
-
-## Development
-
-### View API end-points
-* http://127.0.0.1:8000/docs
-* http://127.0.0.1:8000/redoc
-
-### Start Web Server
-Instead of using `uvicorn` with `--reload` (as this does not wire-in dependencies as per this projects' conventions)
-
-Use [simulations/serve](simulations/serve/__init__.py)
-
 ### Issues
 Beware of the Zombies `ps aux | grep defunct`
+
+## Docker 
+1. `docker build . -t automata-api` 
+2. `docker run -itd --rm --name atest automata-api`
+3. `docker exec -it atest sh`
+
+* deps installed `/usr/local/lib/python3.10/site-packages`
