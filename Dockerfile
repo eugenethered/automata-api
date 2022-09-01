@@ -1,16 +1,15 @@
-FROM python:3.10.6-alpine
-
+FROM python:3.10.6-alpine AS BUILDER
+LABEL stage=BUILDER
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-
-WORKDIR /app
-
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./apiautomata ./apiautomata
-
-# todo: non-root user
-
+FROM python:3.10.6-alpine
+RUN addgroup apprunner && adduser apprunner -D -H -G apprunner
+USER apprunner
+WORKDIR /app
+COPY --from=BUILDER /usr/local/lib/python3.10/site-packages/ /usr/local/lib/python3.10/site-packages/
+COPY --chown=apprunner:apprunner ./apiautomata ./apiautomata
 ENV PYTHONPATH="${PYTHONPATH}:/app/apiautomata"
-CMD ["python", "-v"]
+CMD ["python", "apiautomata/__main__.py"]
