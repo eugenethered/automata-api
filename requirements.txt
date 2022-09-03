@@ -1,8 +1,8 @@
 fastapi==0.78.0
 uvicorn==0.17.6
 aiohttp==3.8.1
-persuader-technology-automata-core>=0.5.8
-persuader-technology-automata-utilities>=0.1.5
+persuader-technology-automata-core>=0.5.9
+persuader-technology-automata-utilities>=0.1.6
 persuader-technology-automata-logger>=0.0.5
 persuader-technology-automata-redis>=0.3.5
 persuader-technology-automata-missing-repository>=0.1.8
