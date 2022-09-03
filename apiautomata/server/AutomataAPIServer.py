@@ -22,6 +22,9 @@ class AutomataAPIServer:
         self.init_dependencies()
 
     def init_dependencies(self):
+        if 'IGNORE_INIT_DEPENDENCIES' in self.options and self.options['IGNORE_INIT_DEPENDENCIES'] is True:
+            self.log.warning('Ignoring Initializing dependencies!')
+            return
         self.log.info('Initializing dependencies')
         item_holder = ItemHolder()
         item_holder.add(self.options['VERSION'], 'version')
