@@ -22,6 +22,9 @@ ENV PYTHONPATH="${PYTHONPATH}:/app/apiautomata" \
     EXCHANGE_TRANSFORMATIONS_KEY=binance:transformation:mv:exchange \
     TRADE_TRANSFORMATIONS_KEY=binance:transformation:mv:trade \
     EXCHANGE_RATE_TIMESERIES_KEY=binance:ts:exchange-rate:{} \
-    EXCHANGE_RATE_TIMESERIES_RETENTION=360000
+    EXCHANGE_RATE_TIMESERIES_RETENTION=360000 \
+    VERSION=0.1 \
+    PROCESS_RUN_PROFILE_KEY={}:process:run-profile:{} \
+    PROCESS_KEY={}:process:status:{}
 
 CMD ["python", "apiautomata/__main__.py"]
