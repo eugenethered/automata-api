@@ -14,9 +14,16 @@ async def get_process_run_profile(market, name):
 
 
 @router.post('/process/{market}/{name}', response_model=bool)
-async def enable_proces(market, name, enable: bool = True):
+async def enable_process(market, name, enable: bool = True):
     process_run_profile_repository = ItemHolder.get_entity(ProcessRunProfileRepository)
     process_run_profile = process_run_profile_repository.retrieve(name, market)
     process_run_profile.enabled = enable
     process_run_profile_repository.store(process_run_profile)
     return process_run_profile.enabled
+
+
+@router.put('/process/run-profile')
+async def create_process_run_profile(process_run_profile: ProcessRunProfile):
+    process_run_profile_repository = ItemHolder.get_entity(ProcessRunProfileRepository)
+    process_run_profile_repository.store(process_run_profile)
+    return process_run_profile
