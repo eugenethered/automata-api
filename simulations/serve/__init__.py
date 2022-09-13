@@ -7,16 +7,20 @@ from apiautomata.server.AutomataAPIServer import AutomataAPIServer
 if __name__ == '__main__':
 
     options = {
-        'REDIS_SERVER_ADDRESS': '10.104.71.60',
+        'REDIS_SERVER_ADDRESS': '127.0.0.1',
         'REDIS_SERVER_PORT': 6379,
         'API_SERVER_HOST': '127.0.0.1',
         'API_SERVER_PORT': 8000,
         'MISSING_KEY': '<MARKET>:missing',
         'INSTRUMENT_EXCHANGES_KEY': '<MARKET>:exchange:instruments',
         'EXCHANGE_TRANSFORMATIONS_KEY': '<MARKET>:transformation:exchange',
+        'INFLUXDB_SERVER_ADDRESS': '127.0.0.1',
+        'INFLUXDB_SERVER_PORT': 8086,
+        'INFLUXDB_AUTH_TOKEN': 'q3cfJCCyfo4RNJuyg72U-3uEhrv3qkKQcDOesoyeIDg2BCUpmn-mjReqaGwO7GOebhd58wYVkopi5tcgCj8t5w==',
+        'INFLUXDB_AUTH_ORG': 'persuader-technology',
+        'INFLUXDB_BUCKET': 'automata',
+        'EXCHANGE_RATE_TIMESERIES_KEY': 'exchange-rate',
         'TRADE_TRANSFORMATIONS_KEY': '<MARKET>:transformation:trade',
-        'EXCHANGE_RATE_TIMESERIES_KEY': '<MARKET>:time-series:exchange-rate:{}',
-        'EXCHANGE_RATE_TIMESERIES_RETENTION': 360000,
         'PROCESS_RUN_PROFILE_KEY': '<MARKET>:process:mv:run-profile',
         'PROCESS_KEY': '<MARKET>:process:mv:status',
         'PROCESS_RUN_COMMAND': 'echo "running: {process-name}"',
