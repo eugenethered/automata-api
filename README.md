@@ -4,9 +4,7 @@
 Beware of the Zombies `ps aux | grep defunct`
 
 ## Docker
-1. `docker build . -t persuadertechnology/automata-api:0.1`
-2. `docker image prune --filter label=stage=BUILDER`
-3. `docker build . -t persuadertechnology/automata-api:0.1 && docker image prune --filter label=stage=BUILDER` (combined)
+* `docker build . -t persuadertechnology/automata-api:0.1 && docker image prune --filter label=stage=BUILDER` (combined)
 
 ## Publishing to Docker Repository
 todo: automate this...
