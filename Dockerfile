@@ -27,8 +27,9 @@ ENV PYTHONPATH="${PYTHONPATH}:/app/apiautomata" \
     INFLUXDB_BUCKET=automata \
     EXCHANGE_RATE_TIMESERIES_KEY=exchange-rate \
     TRADE_TRANSFORMATIONS_KEY=binance:transformation:mv:trade \
+    AUTH_INFO_KEY=binance:auth:info \
     VERSION=0.1 \
-    PROCESS_RUN_PROFILE_KEY={}:process:run-profile:{} \
-    PROCESS_KEY={}:process:status:{}
+    PROCESS_RUN_PROFILE_KEY=binance:process:mv:run-profile \
+    PROCESS_KEY=binance:process:mv:status
 
 CMD ["python", "apiautomata/__main__.py"]

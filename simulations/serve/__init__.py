@@ -26,6 +26,7 @@ if __name__ == '__main__':
         'PROCESS_RUN_PROFILE_KEY': '<MARKET>:process:mv:run-profile',
         'PROCESS_KEY': '<MARKET>:process:mv:status',
         'PROCESS_RUN_COMMAND': 'echo "running: {process-name}"',
+        'AUTH_INFO_KEY': '<MARKET>:auth:info',
         'VERSION': '0.0.1'
     }
 

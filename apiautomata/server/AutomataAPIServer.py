@@ -1,6 +1,7 @@
 import logging
 
 import uvicorn
+from coreauth.repository.AuthRepository import AuthRepository
 from exchangerepo.repository.ExchangeRateRepository import ExchangeRateRepository
 from exchangerepo.repository.InstrumentExchangeRepository import InstrumentExchangeRepository
 from exchangetransformrepo.repository.ExchangeTransformRepository import ExchangeTransformRepository
@@ -35,6 +36,7 @@ class AutomataAPIServer:
         item_holder.add_entity(ExchangeRateRepository(self.options))
         item_holder.add_entity(ProcessRunProfileRepository(self.options))
         item_holder.add_entity(ProcessRepository(self.options))
+        item_holder.add_entity(AuthRepository(self.options))
 
     def run(self):
         self.log.info('Running')
