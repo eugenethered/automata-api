@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        pip install python-dotenv
+        pip install python-dotenv requests
     - name: Check CURRENT vs RELEASED version
       run: |
         echo | python .scripts/tag_release_indicator.py >> $GITHUB_ENV
